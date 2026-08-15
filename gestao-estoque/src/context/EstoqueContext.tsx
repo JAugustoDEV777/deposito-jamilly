@@ -216,7 +216,7 @@ export const ProvedorEstoque: React.FC<ProvedorProps> = ({ children }) => {
         custoDeCompra: produtoNovo.precoCusto,
         precoDeVenda: produtoNovo.precoVenda,
         categoria: produtoNovo.categoria,
-        validade: produtoNovo.validade,
+        validade: produtoNovo.validade ?? null,
       }),
     })
 
@@ -264,7 +264,7 @@ export const ProvedorEstoque: React.FC<ProvedorProps> = ({ children }) => {
       custoDeCompra: produtoAtualizado.precoCusto,
       precoDeVenda: produtoAtualizado.precoVenda,
       categoria: produtoAtualizado.categoria,
-      validade: produtoAtualizado.validade,
+      validade: produtoAtualizado.validade ?? null,
     }
 
     const response = await fetch(construirUrl(`/produtos/${id}`), {

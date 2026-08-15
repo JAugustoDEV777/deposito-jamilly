@@ -180,6 +180,7 @@ export const Estoque: React.FC = () => {
     const estoqueMinNum = parseInt(estoqueMinimo, 10) || 0;
     const estoqueMaxNum = parseInt(estoqueMaximo, 10) || 0;
     const unidadePackNum = tipoSaida === 'uni' ? 1 : parseInt(unidadePack, 10) || 1;
+    const validadeParaEnviar = validade === '' ? null : (validade || undefined);
 
     try {
       await adicionarProduto({
@@ -192,7 +193,7 @@ export const Estoque: React.FC = () => {
         precoVenda: venda,
         unidadePack: unidadePackNum,
         tipoSaida,
-        validade: validade || undefined,
+        validade: validadeParaEnviar,
       } as any);
 
       definirExibirModalAdicionar(false);
@@ -217,6 +218,7 @@ export const Estoque: React.FC = () => {
     const estoqueMinNum = parseInt(estoqueMinimo, 10) || 0;
     const estoqueMaxNum = parseInt(estoqueMaximo, 10) || 0;
     const unidadePackNum = tipoSaida === 'uni' ? 1 : parseInt(unidadePack, 10) || 1;
+    const validadeParaEnviar = validade === '' ? null : (validade || undefined);
 
     try {
       await editarProduto(produtoEdicao.id, {
@@ -229,7 +231,7 @@ export const Estoque: React.FC = () => {
         precoVenda: venda,
         unidadePack: unidadePackNum,
         tipoSaida,
-        validade: validade || undefined,
+        validade: validadeParaEnviar,
       } as any);
 
       definirExibirModalEditar(false);
