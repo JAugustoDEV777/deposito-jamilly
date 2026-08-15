@@ -4,6 +4,15 @@ import { prisma } from './db.js'
 
 const app = express()
 
+const parseDataValidade = (valor?: string | null) => {
+  if (!valor) return null
+
+  const data = new Date(`${valor}T12:00:00`)
+  if (Number.isNaN(data.getTime())) return null
+
+  return data
+}
+
 app.use(cors({ origin: process.env.FRONTEND_URL ?? '*' }))
 app.use(express.json())
 
@@ -36,7 +45,7 @@ app.post('/api/produtos', async (req: Request, res: Response) => {
       custoDeCompra,
       precoDeVenda,
       categoriaId,
-      validade: validade ? new Date(validade) : null,
+      validade: parseDataValidade(validade),
     },
   })
   res.status(201).json(produto)
@@ -75,7 +84,7 @@ app.put('/api/produtos/:id', async (req: Request, res: Response) => {
       ...(custoDeCompra !== undefined && { custoDeCompra }),
       ...(precoDeVenda !== undefined && { precoDeVenda }),
       ...(categoriaId !== undefined && { categoriaId }),
-      ...(validade !== undefined && { validade: validade ? new Date(validade) : null }),
+      ...(validade !== undefined && { validade: parseDataValidade(validade) }),
     },
   })
 

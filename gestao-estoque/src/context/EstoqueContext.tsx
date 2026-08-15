@@ -95,19 +95,25 @@ const formatarHorarioBR = (valor: string | Date) => {
   return date.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })
 }
 
-const mapProdutoBackendToFrontend = (produto: BackendProduto): Produto => ({
-  id: String(produto.id),
-  nome: produto.nome,
-  categoria: produto.categoria?.nome ?? 'Sem categoria',
-  quantidade: produto.qtdAtual,
-  estoqueMinimo: produto.qtdMinima,
-  estoqueMaximo: produto.qtdMaxima,
-  precoCusto: Number(produto.custoDeCompra),
-  precoVenda: Number(produto.precoDeVenda),
-  unidadePack: produto.unidadesPorPack,
-  dataCriacao: formatarDataBR(produto.dataCadastro),
-  validade: produto.validade ? produto.validade.split('T')[0] : '',
-})
+const mapProdutoBackendToFrontend = (produto: BackendProduto): Produto => {
+  const validadeFormatada = produto.validade
+    ? new Date(produto.validade).toISOString().slice(0, 10)
+    : ''
+
+  return {
+    id: String(produto.id),
+    nome: produto.nome,
+    categoria: produto.categoria?.nome ?? 'Sem categoria',
+    quantidade: produto.qtdAtual,
+    estoqueMinimo: produto.qtdMinima,
+    estoqueMaximo: produto.qtdMaxima,
+    precoCusto: Number(produto.custoDeCompra),
+    precoVenda: Number(produto.precoDeVenda),
+    unidadePack: produto.unidadesPorPack,
+    dataCriacao: formatarDataBR(produto.dataCadastro),
+    validade: validadeFormatada,
+  }
+}
 
 const mapMovimentacaoBackendToFrontend = (mov: BackendMovimentacao): Movimentacao => {
   const custoUnitario = Number(mov.produto?.custoDeCompra ?? 0)
