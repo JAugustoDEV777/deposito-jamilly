@@ -134,6 +134,7 @@ exports.Prisma.ProdutoScalarFieldEnum = {
   qtdAtual: 'qtdAtual',
   qtdMinima: 'qtdMinima',
   qtdMaxima: 'qtdMaxima',
+  validade: 'validade',
   custoDeCompra: 'custoDeCompra',
   precoDeVenda: 'precoDeVenda',
   categoriaId: 'categoriaId'
@@ -157,6 +158,7 @@ exports.Prisma.UsuarioScalarFieldEnum = {
   email: 'email',
   senha: 'senha',
   cargo: 'cargo',
+  foto: 'foto',
   createdAt: 'createdAt'
 };
 

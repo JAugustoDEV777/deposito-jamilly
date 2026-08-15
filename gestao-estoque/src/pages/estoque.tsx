@@ -167,62 +167,78 @@ export const Estoque: React.FC = () => {
   };
 
   // Salva o novo produto e fecha o modal
-  const lidarComSalvarProduto = (e: React.FormEvent) => {
+  const lidarComSalvarProduto = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!nome.trim() || !precoCusto || !precoVenda) {
-      alert('Por favor, preencha todos os campos obrigatórios.');
+    if (!nome.trim() || !precoCusto || !precoVenda || !categoria.trim()) {
+      alert('Por favor, preencha todos os campos obrigatórios, incluindo a categoria.');
       return;
     }
+
     const custo = parseFloat(precoCusto.replace(',', '.'));
     const venda = parseFloat(precoVenda.replace(',', '.'));
-    // Converte os campos numéricos (strings) antes de enviar
     const quantidadeNum = parseInt(quantidade, 10) || 0;
     const estoqueMinNum = parseInt(estoqueMinimo, 10) || 0;
     const estoqueMaxNum = parseInt(estoqueMaximo, 10) || 0;
-    // Se tipo de saída for unidade, força unidadePack = 1
     const unidadePackNum = tipoSaida === 'uni' ? 1 : parseInt(unidadePack, 10) || 1;
-    adicionarProduto({
-      nome,
-      categoria,
-      quantidade: quantidadeNum,
-      estoqueMinimo: estoqueMinNum,
-      estoqueMaximo: estoqueMaxNum,
-      precoCusto: custo,
-      precoVenda: venda,
-      unidadePack: unidadePackNum,
-      // lucroManual e adicionarJuros movidos para modal de saída
-      tipoSaida,
-      validade: validade || undefined,
-    } as any);
-    definirExibirModalAdicionar(false);
-    definirTemModalAberto(false);
+
+    try {
+      await adicionarProduto({
+        nome: nome.trim(),
+        categoria: categoria.trim(),
+        quantidade: quantidadeNum,
+        estoqueMinimo: estoqueMinNum,
+        estoqueMaximo: estoqueMaxNum,
+        precoCusto: custo,
+        precoVenda: venda,
+        unidadePack: unidadePackNum,
+        tipoSaida,
+        validade: validade || undefined,
+      } as any);
+
+      definirExibirModalAdicionar(false);
+      definirTemModalAberto(false);
+    } catch (error) {
+      console.error('Erro ao salvar produto:', error);
+      alert(error instanceof Error ? error.message : 'Não foi possível salvar o produto.');
+    }
   };
 
   // Salva a edição do produto e fecha o modal
-  const lidarComEditarProduto = (e: React.FormEvent) => {
+  const lidarComEditarProduto = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!produtoEdicao || !nome.trim() || !precoCusto || !precoVenda) return;
+    if (!produtoEdicao || !nome.trim() || !precoCusto || !precoVenda || !categoria.trim()) {
+      alert('Por favor, preencha todos os campos obrigatórios, incluindo a categoria.');
+      return;
+    }
+
     const custo = parseFloat(precoCusto.replace(',', '.'));
     const venda = parseFloat(precoVenda.replace(',', '.'));
     const quantidadeNum = parseInt(quantidade, 10) || 0;
     const estoqueMinNum = parseInt(estoqueMinimo, 10) || 0;
     const estoqueMaxNum = parseInt(estoqueMaximo, 10) || 0;
     const unidadePackNum = tipoSaida === 'uni' ? 1 : parseInt(unidadePack, 10) || 1;
-    editarProduto(produtoEdicao.id, {
-      nome,
-      categoria,
-      quantidade: quantidadeNum,
-      estoqueMinimo: estoqueMinNum,
-      estoqueMaximo: estoqueMaxNum,
-      precoCusto: custo,
-      precoVenda: venda,
-      unidadePack: unidadePackNum,
-      tipoSaida,
-      validade: validade || undefined,
-    } as any);
-    definirExibirModalEditar(false);
-    definirTemModalAberto(false);
-    definirProdutoEdicao(null);
+
+    try {
+      await editarProduto(produtoEdicao.id, {
+        nome: nome.trim(),
+        categoria: categoria.trim(),
+        quantidade: quantidadeNum,
+        estoqueMinimo: estoqueMinNum,
+        estoqueMaximo: estoqueMaxNum,
+        precoCusto: custo,
+        precoVenda: venda,
+        unidadePack: unidadePackNum,
+        tipoSaida,
+        validade: validade || undefined,
+      } as any);
+
+      definirExibirModalEditar(false);
+      definirTemModalAberto(false);
+      definirProdutoEdicao(null);
+    } catch (error) {
+      console.error('Erro ao editar produto:', error);
+      alert(error instanceof Error ? error.message : 'Não foi possível editar o produto.');
+    }
   };
 
   const calcularDiasRestantesValidade = (validade?: string | null) => {

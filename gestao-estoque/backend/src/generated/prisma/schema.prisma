@@ -27,9 +27,10 @@ model Produto {
   unidadesPorPack Int      @default(1) // Seção: IDENTIFICAÇÃO -> UNIDADES POR PACK
 
   // Seção: CONTROLE DE ESTOQUE
-  qtdAtual  Int @default(0) // QTD ATUAL
-  qtdMinima Int @default(0) // QTD MÍNIMA
-  qtdMaxima Int @default(0) // QTD MÁXIMA
+  qtdAtual  Int       @default(0) // QTD ATUAL
+  qtdMinima Int       @default(0) // QTD MÍNIMA
+  qtdMaxima Int       @default(0) // QTD MÁXIMA
+  validade  DateTime? // Data de validade opcional
 
   // Seção: FINANCEIRO
   // Nota: Usamos o tipo 'Decimal' para valores monetários para evitar problemas de arredondamento de ponto flutuante.
@@ -71,5 +72,6 @@ model Usuario {
   email     String   @unique
   senha     String
   cargo     String?
+  foto      String?
   createdAt DateTime @default(now())
 }

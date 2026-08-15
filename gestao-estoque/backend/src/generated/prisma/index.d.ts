@@ -2330,6 +2330,7 @@ export namespace Prisma {
     qtdAtual: number | null
     qtdMinima: number | null
     qtdMaxima: number | null
+    validade: Date | null
     custoDeCompra: Decimal | null
     precoDeVenda: Decimal | null
     categoriaId: number | null
@@ -2343,6 +2344,7 @@ export namespace Prisma {
     qtdAtual: number | null
     qtdMinima: number | null
     qtdMaxima: number | null
+    validade: Date | null
     custoDeCompra: Decimal | null
     precoDeVenda: Decimal | null
     categoriaId: number | null
@@ -2356,6 +2358,7 @@ export namespace Prisma {
     qtdAtual: number
     qtdMinima: number
     qtdMaxima: number
+    validade: number
     custoDeCompra: number
     precoDeVenda: number
     categoriaId: number
@@ -2393,6 +2396,7 @@ export namespace Prisma {
     qtdAtual?: true
     qtdMinima?: true
     qtdMaxima?: true
+    validade?: true
     custoDeCompra?: true
     precoDeVenda?: true
     categoriaId?: true
@@ -2406,6 +2410,7 @@ export namespace Prisma {
     qtdAtual?: true
     qtdMinima?: true
     qtdMaxima?: true
+    validade?: true
     custoDeCompra?: true
     precoDeVenda?: true
     categoriaId?: true
@@ -2419,6 +2424,7 @@ export namespace Prisma {
     qtdAtual?: true
     qtdMinima?: true
     qtdMaxima?: true
+    validade?: true
     custoDeCompra?: true
     precoDeVenda?: true
     categoriaId?: true
@@ -2519,6 +2525,7 @@ export namespace Prisma {
     qtdAtual: number
     qtdMinima: number
     qtdMaxima: number
+    validade: Date | null
     custoDeCompra: Decimal
     precoDeVenda: Decimal
     categoriaId: number
@@ -2551,6 +2558,7 @@ export namespace Prisma {
     qtdAtual?: boolean
     qtdMinima?: boolean
     qtdMaxima?: boolean
+    validade?: boolean
     custoDeCompra?: boolean
     precoDeVenda?: boolean
     categoriaId?: boolean
@@ -2567,6 +2575,7 @@ export namespace Prisma {
     qtdAtual?: boolean
     qtdMinima?: boolean
     qtdMaxima?: boolean
+    validade?: boolean
     custoDeCompra?: boolean
     precoDeVenda?: boolean
     categoriaId?: boolean
@@ -2581,6 +2590,7 @@ export namespace Prisma {
     qtdAtual?: boolean
     qtdMinima?: boolean
     qtdMaxima?: boolean
+    validade?: boolean
     custoDeCompra?: boolean
     precoDeVenda?: boolean
     categoriaId?: boolean
@@ -2595,12 +2605,13 @@ export namespace Prisma {
     qtdAtual?: boolean
     qtdMinima?: boolean
     qtdMaxima?: boolean
+    validade?: boolean
     custoDeCompra?: boolean
     precoDeVenda?: boolean
     categoriaId?: boolean
   }
 
-  export type ProdutoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "dataCadastro" | "nome" | "unidadesPorPack" | "qtdAtual" | "qtdMinima" | "qtdMaxima" | "custoDeCompra" | "precoDeVenda" | "categoriaId", ExtArgs["result"]["produto"]>
+  export type ProdutoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "dataCadastro" | "nome" | "unidadesPorPack" | "qtdAtual" | "qtdMinima" | "qtdMaxima" | "validade" | "custoDeCompra" | "precoDeVenda" | "categoriaId", ExtArgs["result"]["produto"]>
   export type ProdutoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     categoria?: boolean | CategoriaDefaultArgs<ExtArgs>
     movimentacoes?: boolean | Produto$movimentacoesArgs<ExtArgs>
@@ -2627,6 +2638,7 @@ export namespace Prisma {
       qtdAtual: number
       qtdMinima: number
       qtdMaxima: number
+      validade: Date | null
       custoDeCompra: Prisma.Decimal
       precoDeVenda: Prisma.Decimal
       categoriaId: number
@@ -3062,6 +3074,7 @@ export namespace Prisma {
     readonly qtdAtual: FieldRef<"Produto", 'Int'>
     readonly qtdMinima: FieldRef<"Produto", 'Int'>
     readonly qtdMaxima: FieldRef<"Produto", 'Int'>
+    readonly validade: FieldRef<"Produto", 'DateTime'>
     readonly custoDeCompra: FieldRef<"Produto", 'Decimal'>
     readonly precoDeVenda: FieldRef<"Produto", 'Decimal'>
     readonly categoriaId: FieldRef<"Produto", 'Int'>
@@ -4699,6 +4712,7 @@ export namespace Prisma {
     email: string | null
     senha: string | null
     cargo: string | null
+    foto: string | null
     createdAt: Date | null
   }
 
@@ -4708,6 +4722,7 @@ export namespace Prisma {
     email: string | null
     senha: string | null
     cargo: string | null
+    foto: string | null
     createdAt: Date | null
   }
 
@@ -4717,6 +4732,7 @@ export namespace Prisma {
     email: number
     senha: number
     cargo: number
+    foto: number
     createdAt: number
     _all: number
   }
@@ -4736,6 +4752,7 @@ export namespace Prisma {
     email?: true
     senha?: true
     cargo?: true
+    foto?: true
     createdAt?: true
   }
 
@@ -4745,6 +4762,7 @@ export namespace Prisma {
     email?: true
     senha?: true
     cargo?: true
+    foto?: true
     createdAt?: true
   }
 
@@ -4754,6 +4772,7 @@ export namespace Prisma {
     email?: true
     senha?: true
     cargo?: true
+    foto?: true
     createdAt?: true
     _all?: true
   }
@@ -4850,6 +4869,7 @@ export namespace Prisma {
     email: string
     senha: string
     cargo: string | null
+    foto: string | null
     createdAt: Date
     _count: UsuarioCountAggregateOutputType | null
     _avg: UsuarioAvgAggregateOutputType | null
@@ -4878,6 +4898,7 @@ export namespace Prisma {
     email?: boolean
     senha?: boolean
     cargo?: boolean
+    foto?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["usuario"]>
 
@@ -4887,6 +4908,7 @@ export namespace Prisma {
     email?: boolean
     senha?: boolean
     cargo?: boolean
+    foto?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["usuario"]>
 
@@ -4896,6 +4918,7 @@ export namespace Prisma {
     email?: boolean
     senha?: boolean
     cargo?: boolean
+    foto?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["usuario"]>
 
@@ -4905,10 +4928,11 @@ export namespace Prisma {
     email?: boolean
     senha?: boolean
     cargo?: boolean
+    foto?: boolean
     createdAt?: boolean
   }
 
-  export type UsuarioOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "email" | "senha" | "cargo" | "createdAt", ExtArgs["result"]["usuario"]>
+  export type UsuarioOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "email" | "senha" | "cargo" | "foto" | "createdAt", ExtArgs["result"]["usuario"]>
 
   export type $UsuarioPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Usuario"
@@ -4919,6 +4943,7 @@ export namespace Prisma {
       email: string
       senha: string
       cargo: string | null
+      foto: string | null
       createdAt: Date
     }, ExtArgs["result"]["usuario"]>
     composites: {}
@@ -5348,6 +5373,7 @@ export namespace Prisma {
     readonly email: FieldRef<"Usuario", 'String'>
     readonly senha: FieldRef<"Usuario", 'String'>
     readonly cargo: FieldRef<"Usuario", 'String'>
+    readonly foto: FieldRef<"Usuario", 'String'>
     readonly createdAt: FieldRef<"Usuario", 'DateTime'>
   }
     
@@ -5751,6 +5777,7 @@ export namespace Prisma {
     qtdAtual: 'qtdAtual',
     qtdMinima: 'qtdMinima',
     qtdMaxima: 'qtdMaxima',
+    validade: 'validade',
     custoDeCompra: 'custoDeCompra',
     precoDeVenda: 'precoDeVenda',
     categoriaId: 'categoriaId'
@@ -5780,6 +5807,7 @@ export namespace Prisma {
     email: 'email',
     senha: 'senha',
     cargo: 'cargo',
+    foto: 'foto',
     createdAt: 'createdAt'
   };
 
@@ -5946,6 +5974,7 @@ export namespace Prisma {
     qtdAtual?: IntFilter<"Produto"> | number
     qtdMinima?: IntFilter<"Produto"> | number
     qtdMaxima?: IntFilter<"Produto"> | number
+    validade?: DateTimeNullableFilter<"Produto"> | Date | string | null
     custoDeCompra?: DecimalFilter<"Produto"> | Decimal | DecimalJsLike | number | string
     precoDeVenda?: DecimalFilter<"Produto"> | Decimal | DecimalJsLike | number | string
     categoriaId?: IntFilter<"Produto"> | number
@@ -5961,6 +5990,7 @@ export namespace Prisma {
     qtdAtual?: SortOrder
     qtdMinima?: SortOrder
     qtdMaxima?: SortOrder
+    validade?: SortOrderInput | SortOrder
     custoDeCompra?: SortOrder
     precoDeVenda?: SortOrder
     categoriaId?: SortOrder
@@ -5979,6 +6009,7 @@ export namespace Prisma {
     qtdAtual?: IntFilter<"Produto"> | number
     qtdMinima?: IntFilter<"Produto"> | number
     qtdMaxima?: IntFilter<"Produto"> | number
+    validade?: DateTimeNullableFilter<"Produto"> | Date | string | null
     custoDeCompra?: DecimalFilter<"Produto"> | Decimal | DecimalJsLike | number | string
     precoDeVenda?: DecimalFilter<"Produto"> | Decimal | DecimalJsLike | number | string
     categoriaId?: IntFilter<"Produto"> | number
@@ -5994,6 +6025,7 @@ export namespace Prisma {
     qtdAtual?: SortOrder
     qtdMinima?: SortOrder
     qtdMaxima?: SortOrder
+    validade?: SortOrderInput | SortOrder
     custoDeCompra?: SortOrder
     precoDeVenda?: SortOrder
     categoriaId?: SortOrder
@@ -6015,6 +6047,7 @@ export namespace Prisma {
     qtdAtual?: IntWithAggregatesFilter<"Produto"> | number
     qtdMinima?: IntWithAggregatesFilter<"Produto"> | number
     qtdMaxima?: IntWithAggregatesFilter<"Produto"> | number
+    validade?: DateTimeNullableWithAggregatesFilter<"Produto"> | Date | string | null
     custoDeCompra?: DecimalWithAggregatesFilter<"Produto"> | Decimal | DecimalJsLike | number | string
     precoDeVenda?: DecimalWithAggregatesFilter<"Produto"> | Decimal | DecimalJsLike | number | string
     categoriaId?: IntWithAggregatesFilter<"Produto"> | number
@@ -6106,6 +6139,7 @@ export namespace Prisma {
     email?: StringFilter<"Usuario"> | string
     senha?: StringFilter<"Usuario"> | string
     cargo?: StringNullableFilter<"Usuario"> | string | null
+    foto?: StringNullableFilter<"Usuario"> | string | null
     createdAt?: DateTimeFilter<"Usuario"> | Date | string
   }
 
@@ -6115,6 +6149,7 @@ export namespace Prisma {
     email?: SortOrder
     senha?: SortOrder
     cargo?: SortOrderInput | SortOrder
+    foto?: SortOrderInput | SortOrder
     createdAt?: SortOrder
   }
 
@@ -6127,6 +6162,7 @@ export namespace Prisma {
     NOT?: UsuarioWhereInput | UsuarioWhereInput[]
     senha?: StringFilter<"Usuario"> | string
     cargo?: StringNullableFilter<"Usuario"> | string | null
+    foto?: StringNullableFilter<"Usuario"> | string | null
     createdAt?: DateTimeFilter<"Usuario"> | Date | string
   }, "id" | "nome" | "email">
 
@@ -6136,6 +6172,7 @@ export namespace Prisma {
     email?: SortOrder
     senha?: SortOrder
     cargo?: SortOrderInput | SortOrder
+    foto?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     _count?: UsuarioCountOrderByAggregateInput
     _avg?: UsuarioAvgOrderByAggregateInput
@@ -6153,6 +6190,7 @@ export namespace Prisma {
     email?: StringWithAggregatesFilter<"Usuario"> | string
     senha?: StringWithAggregatesFilter<"Usuario"> | string
     cargo?: StringNullableWithAggregatesFilter<"Usuario"> | string | null
+    foto?: StringNullableWithAggregatesFilter<"Usuario"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"Usuario"> | Date | string
   }
 
@@ -6206,6 +6244,7 @@ export namespace Prisma {
     qtdAtual?: number
     qtdMinima?: number
     qtdMaxima?: number
+    validade?: Date | string | null
     custoDeCompra: Decimal | DecimalJsLike | number | string
     precoDeVenda: Decimal | DecimalJsLike | number | string
     categoria: CategoriaCreateNestedOneWithoutProdutosInput
@@ -6220,6 +6259,7 @@ export namespace Prisma {
     qtdAtual?: number
     qtdMinima?: number
     qtdMaxima?: number
+    validade?: Date | string | null
     custoDeCompra: Decimal | DecimalJsLike | number | string
     precoDeVenda: Decimal | DecimalJsLike | number | string
     categoriaId: number
@@ -6233,6 +6273,7 @@ export namespace Prisma {
     qtdAtual?: IntFieldUpdateOperationsInput | number
     qtdMinima?: IntFieldUpdateOperationsInput | number
     qtdMaxima?: IntFieldUpdateOperationsInput | number
+    validade?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     custoDeCompra?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     precoDeVenda?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     categoria?: CategoriaUpdateOneRequiredWithoutProdutosNestedInput
@@ -6247,6 +6288,7 @@ export namespace Prisma {
     qtdAtual?: IntFieldUpdateOperationsInput | number
     qtdMinima?: IntFieldUpdateOperationsInput | number
     qtdMaxima?: IntFieldUpdateOperationsInput | number
+    validade?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     custoDeCompra?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     precoDeVenda?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     categoriaId?: IntFieldUpdateOperationsInput | number
@@ -6261,6 +6303,7 @@ export namespace Prisma {
     qtdAtual?: number
     qtdMinima?: number
     qtdMaxima?: number
+    validade?: Date | string | null
     custoDeCompra: Decimal | DecimalJsLike | number | string
     precoDeVenda: Decimal | DecimalJsLike | number | string
     categoriaId: number
@@ -6273,6 +6316,7 @@ export namespace Prisma {
     qtdAtual?: IntFieldUpdateOperationsInput | number
     qtdMinima?: IntFieldUpdateOperationsInput | number
     qtdMaxima?: IntFieldUpdateOperationsInput | number
+    validade?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     custoDeCompra?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     precoDeVenda?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
   }
@@ -6285,6 +6329,7 @@ export namespace Prisma {
     qtdAtual?: IntFieldUpdateOperationsInput | number
     qtdMinima?: IntFieldUpdateOperationsInput | number
     qtdMaxima?: IntFieldUpdateOperationsInput | number
+    validade?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     custoDeCompra?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     precoDeVenda?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     categoriaId?: IntFieldUpdateOperationsInput | number
@@ -6375,6 +6420,7 @@ export namespace Prisma {
     email: string
     senha: string
     cargo?: string | null
+    foto?: string | null
     createdAt?: Date | string
   }
 
@@ -6384,6 +6430,7 @@ export namespace Prisma {
     email: string
     senha: string
     cargo?: string | null
+    foto?: string | null
     createdAt?: Date | string
   }
 
@@ -6392,6 +6439,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     senha?: StringFieldUpdateOperationsInput | string
     cargo?: NullableStringFieldUpdateOperationsInput | string | null
+    foto?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -6401,6 +6449,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     senha?: StringFieldUpdateOperationsInput | string
     cargo?: NullableStringFieldUpdateOperationsInput | string | null
+    foto?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -6410,6 +6459,7 @@ export namespace Prisma {
     email: string
     senha: string
     cargo?: string | null
+    foto?: string | null
     createdAt?: Date | string
   }
 
@@ -6418,6 +6468,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     senha?: StringFieldUpdateOperationsInput | string
     cargo?: NullableStringFieldUpdateOperationsInput | string | null
+    foto?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -6427,6 +6478,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     senha?: StringFieldUpdateOperationsInput | string
     cargo?: NullableStringFieldUpdateOperationsInput | string | null
+    foto?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -6551,6 +6603,17 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
+  export type DateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
   export type DecimalFilter<$PrismaModel = never> = {
     equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
@@ -6573,6 +6636,11 @@ export namespace Prisma {
     none?: MovimentacaoWhereInput
   }
 
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
   export type MovimentacaoOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
@@ -6585,6 +6653,7 @@ export namespace Prisma {
     qtdAtual?: SortOrder
     qtdMinima?: SortOrder
     qtdMaxima?: SortOrder
+    validade?: SortOrder
     custoDeCompra?: SortOrder
     precoDeVenda?: SortOrder
     categoriaId?: SortOrder
@@ -6609,6 +6678,7 @@ export namespace Prisma {
     qtdAtual?: SortOrder
     qtdMinima?: SortOrder
     qtdMaxima?: SortOrder
+    validade?: SortOrder
     custoDeCompra?: SortOrder
     precoDeVenda?: SortOrder
     categoriaId?: SortOrder
@@ -6622,6 +6692,7 @@ export namespace Prisma {
     qtdAtual?: SortOrder
     qtdMinima?: SortOrder
     qtdMaxima?: SortOrder
+    validade?: SortOrder
     custoDeCompra?: SortOrder
     precoDeVenda?: SortOrder
     categoriaId?: SortOrder
@@ -6636,6 +6707,20 @@ export namespace Prisma {
     custoDeCompra?: SortOrder
     precoDeVenda?: SortOrder
     categoriaId?: SortOrder
+  }
+
+  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type DecimalWithAggregatesFilter<$PrismaModel = never> = {
@@ -6726,17 +6811,13 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
-  export type SortOrderInput = {
-    sort: SortOrder
-    nulls?: NullsOrder
-  }
-
   export type UsuarioCountOrderByAggregateInput = {
     id?: SortOrder
     nome?: SortOrder
     email?: SortOrder
     senha?: SortOrder
     cargo?: SortOrder
+    foto?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -6750,6 +6831,7 @@ export namespace Prisma {
     email?: SortOrder
     senha?: SortOrder
     cargo?: SortOrder
+    foto?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -6759,6 +6841,7 @@ export namespace Prisma {
     email?: SortOrder
     senha?: SortOrder
     cargo?: SortOrder
+    foto?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -6860,6 +6943,10 @@ export namespace Prisma {
     connectOrCreate?: MovimentacaoCreateOrConnectWithoutProdutoInput | MovimentacaoCreateOrConnectWithoutProdutoInput[]
     createMany?: MovimentacaoCreateManyProdutoInputEnvelope
     connect?: MovimentacaoWhereUniqueInput | MovimentacaoWhereUniqueInput[]
+  }
+
+  export type NullableDateTimeFieldUpdateOperationsInput = {
+    set?: Date | string | null
   }
 
   export type DecimalFieldUpdateOperationsInput = {
@@ -7018,6 +7105,17 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
+  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
   export type NestedDecimalFilter<$PrismaModel = never> = {
     equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
@@ -7027,6 +7125,31 @@ export namespace Prisma {
     gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     not?: NestedDecimalFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string
+  }
+
+  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedDecimalWithAggregatesFilter<$PrismaModel = never> = {
@@ -7076,17 +7199,6 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
-  }
-
   export type ProdutoCreateWithoutCategoriaInput = {
     dataCadastro?: Date | string
     nome: string
@@ -7094,6 +7206,7 @@ export namespace Prisma {
     qtdAtual?: number
     qtdMinima?: number
     qtdMaxima?: number
+    validade?: Date | string | null
     custoDeCompra: Decimal | DecimalJsLike | number | string
     precoDeVenda: Decimal | DecimalJsLike | number | string
     movimentacoes?: MovimentacaoCreateNestedManyWithoutProdutoInput
@@ -7107,6 +7220,7 @@ export namespace Prisma {
     qtdAtual?: number
     qtdMinima?: number
     qtdMaxima?: number
+    validade?: Date | string | null
     custoDeCompra: Decimal | DecimalJsLike | number | string
     precoDeVenda: Decimal | DecimalJsLike | number | string
     movimentacoes?: MovimentacaoUncheckedCreateNestedManyWithoutProdutoInput
@@ -7149,6 +7263,7 @@ export namespace Prisma {
     qtdAtual?: IntFilter<"Produto"> | number
     qtdMinima?: IntFilter<"Produto"> | number
     qtdMaxima?: IntFilter<"Produto"> | number
+    validade?: DateTimeNullableFilter<"Produto"> | Date | string | null
     custoDeCompra?: DecimalFilter<"Produto"> | Decimal | DecimalJsLike | number | string
     precoDeVenda?: DecimalFilter<"Produto"> | Decimal | DecimalJsLike | number | string
     categoriaId?: IntFilter<"Produto"> | number
@@ -7261,6 +7376,7 @@ export namespace Prisma {
     qtdAtual?: number
     qtdMinima?: number
     qtdMaxima?: number
+    validade?: Date | string | null
     custoDeCompra: Decimal | DecimalJsLike | number | string
     precoDeVenda: Decimal | DecimalJsLike | number | string
     categoria: CategoriaCreateNestedOneWithoutProdutosInput
@@ -7274,6 +7390,7 @@ export namespace Prisma {
     qtdAtual?: number
     qtdMinima?: number
     qtdMaxima?: number
+    validade?: Date | string | null
     custoDeCompra: Decimal | DecimalJsLike | number | string
     precoDeVenda: Decimal | DecimalJsLike | number | string
     categoriaId: number
@@ -7302,6 +7419,7 @@ export namespace Prisma {
     qtdAtual?: IntFieldUpdateOperationsInput | number
     qtdMinima?: IntFieldUpdateOperationsInput | number
     qtdMaxima?: IntFieldUpdateOperationsInput | number
+    validade?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     custoDeCompra?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     precoDeVenda?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     categoria?: CategoriaUpdateOneRequiredWithoutProdutosNestedInput
@@ -7315,6 +7433,7 @@ export namespace Prisma {
     qtdAtual?: IntFieldUpdateOperationsInput | number
     qtdMinima?: IntFieldUpdateOperationsInput | number
     qtdMaxima?: IntFieldUpdateOperationsInput | number
+    validade?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     custoDeCompra?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     precoDeVenda?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     categoriaId?: IntFieldUpdateOperationsInput | number
@@ -7328,6 +7447,7 @@ export namespace Prisma {
     qtdAtual?: number
     qtdMinima?: number
     qtdMaxima?: number
+    validade?: Date | string | null
     custoDeCompra: Decimal | DecimalJsLike | number | string
     precoDeVenda: Decimal | DecimalJsLike | number | string
   }
@@ -7339,6 +7459,7 @@ export namespace Prisma {
     qtdAtual?: IntFieldUpdateOperationsInput | number
     qtdMinima?: IntFieldUpdateOperationsInput | number
     qtdMaxima?: IntFieldUpdateOperationsInput | number
+    validade?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     custoDeCompra?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     precoDeVenda?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     movimentacoes?: MovimentacaoUpdateManyWithoutProdutoNestedInput
@@ -7352,6 +7473,7 @@ export namespace Prisma {
     qtdAtual?: IntFieldUpdateOperationsInput | number
     qtdMinima?: IntFieldUpdateOperationsInput | number
     qtdMaxima?: IntFieldUpdateOperationsInput | number
+    validade?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     custoDeCompra?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     precoDeVenda?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     movimentacoes?: MovimentacaoUncheckedUpdateManyWithoutProdutoNestedInput
@@ -7365,6 +7487,7 @@ export namespace Prisma {
     qtdAtual?: IntFieldUpdateOperationsInput | number
     qtdMinima?: IntFieldUpdateOperationsInput | number
     qtdMaxima?: IntFieldUpdateOperationsInput | number
+    validade?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     custoDeCompra?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     precoDeVenda?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
   }
