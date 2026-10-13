@@ -157,28 +157,7 @@ export const Login: React.FC = () => {
         <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#3525cd] opacity-5 rounded-full blur-[80px]"></div>
         <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-[#3525cd] opacity-5 rounded-full blur-[60px]"></div>
 
-        {/* Card de Depoimento */}
-        <div className="relative bg-white/80 backdrop-blur-sm border border-white p-8 rounded-2xl shadow-xl max-w-md">
-          <div className="flex gap-1 text-[#006c49] mb-4">
-            <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-            <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-            <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-            <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-            <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-          </div>
-          <p className="text-xl font-bold italic text-on-surface mb-6 leading-relaxed">
-            "O DEPÓSITO centralizou nossa inteligência logística, permitindo decisões rápidas e crescimento constante na nossa operação."
-          </p>
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-[#3525cd] text-white rounded-full flex items-center justify-center font-bold text-sm">
-              J
-            </div>
-            <div>
-              <p className="font-bold text-sm text-on-surface">Jamilly Maia</p>
-              <p className="text-xs text-on-surface-variant">Administradora</p>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   );
